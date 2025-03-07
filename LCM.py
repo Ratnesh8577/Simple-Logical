@@ -1,16 +1,26 @@
-a=int(input("Enter the first number: "))
-b=int(input("Enter the second number: "))
-if a==b:
-    print("LCM i",b)
-else:
-    if a>b:
-        max=a
+#Write a Python Program to Find LCM(Least Commaon Multiple)
+#LCM(a,b)== |a,b|/GCD(a,b)
+# GCD stands for Greatest Common Divisor
+
+#Python Program to find the LCm of two input number
+def compute_lcm(x,y):
+    if x > y:           #choose the greater number
+                    
+        greater = x
     else:
-        max=b
-    i=max
-    while(1):
-        if(max%a==0 and max%b==0):
-            print("LCM is",max)
+        greater = y   #choose the greater number  
+    while (True):
+        if ((greater % x == 0) and (greater % y == 0)):
+            lcm=greater
             break
-        else:
-            max=max+i
+        greater+=1
+    return lcm
+
+
+
+
+
+#Driver code
+num1=int(input("Enter the number: "))
+num2=int(input("Enter the number:"))
+print("The L.C.M is ",compute_lcm(num1,num2))
